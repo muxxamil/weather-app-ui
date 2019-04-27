@@ -1,0 +1,13 @@
+<form [formGroup]="addTemperatureForm" (ngSubmit)="submitTemperature(addTemperatureForm.value)">
+  <div class="row">
+    <div class="col-md-5 form-group">
+      <input type="text" formControlName="temperature" name="temperature" class="form-control" id="temperatureInput">
+      <div *ngIf="!addTemperatureForm.value.temperature" class="alert alert-danger mt-1">
+          * This field is required.
+        </div>
+    </div>
+    <div class="col-md-2 form-group">
+      <button class="btn btn-primary" type="submit" [disabled]="!addTemperatureForm.valid">Add Temperature</button>
+    </div>
+  </div>
+</form>

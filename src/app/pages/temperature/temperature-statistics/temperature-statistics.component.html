@@ -1,0 +1,18 @@
+<table class="table">
+  <thead>
+    <tr>
+      <th>Average</th>
+      <th>Highest</th>
+      <th>Lowest</th>
+      <th>Median</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>{{ temperatureStatistics.avgTemperature ? (temperatureStatistics.avgTemperature | number:'1.1-1') + ' &deg;c' : '-'}}</td>
+      <td>{{ temperatureStatistics.maxTemperature ? temperatureStatistics.maxTemperature + ' &deg;c' : '-'}}</td>
+      <td>{{ temperatureStatistics.minTemperature ? temperatureStatistics.minTemperature + ' &deg;c' : '-'}}</td>
+      <td>{{ temperatureStatistics.medianTemperature ? (temperatureStatistics.medianTemperature | number:'1.1-1') + ' &deg;c' : '-'}}</td>
+    </tr>
+  </tbody>
+</table>

@@ -1,0 +1,21 @@
+<div class="mt-3">
+<p-dataTable [value]="temperatureLogData.docs" [lazy]="true" [rows]="defaultLimit" 
+[paginator]="true" [totalRecords]="temperatureLogData.total" (onLazyLoad)="loadLogsLazy($event)">
+    <p-header>Temperature Logs</p-header>
+    <p-column field="dateAdded" header="Date">
+      <ng-template let-col let-temperatureLogObj="rowData" pTemplate="body">
+          <span>{{ temperatureLogObj[col.field] | date:'mediumDate' }}</span>
+      </ng-template>
+    </p-column>
+    <p-column field="temperature" header="Temperature">
+      <ng-template let-col let-temperatureLogObj="rowData" pTemplate="body">
+          <span>{{ temperatureLogObj[col.field] | number:'1.1' }} &deg;c</span>
+      </ng-template>
+    </p-column>
+    <p-column field="_id" header="Action">
+        <ng-template let-col let-temperatureLogObj="rowData" pTemplate="body">
+            <span><i class="fa fa-trash" (click)="deleteLog(temperatureLogObj[col.field])"></i></span>
+        </ng-template>
+      </p-column>
+</p-dataTable>
+</div>

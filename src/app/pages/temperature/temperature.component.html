@@ -1,0 +1,6 @@
+<div class="main">
+  <h2>Temperature</h2>
+  <app-add-temperature (addTemperatureEvent)="addTemperature($event)"></app-add-temperature>
+  <app-temperature-statistics [temperatureStatistics]="temperatureStatistics"></app-temperature-statistics>
+  <app-temperature-logs [temperatureLogData]="temperatureLogs" (paginationEvent)="getTemperatureLogs($event)" (deleteLogEvent)="deleteTemperatureLog($event)"></app-temperature-logs>
+</div>
